@@ -1,79 +1,43 @@
 #!/usr/bin/python
 from mpmath import *
 
+def F1(t):
+	return hyper([-1/20.0 , 3/20.0 , 7/20.0 , 11/20.0], [1/4.0 , 1/2.0 , 3/4.0], 3125*(t**4)/256)
 
-# k -> ellmodk
-# Get the elliptic modulus k
-def ellmodk(rho):
-  return tan(asin(16/(25*rho*rho*sqrt(5)))/4.0)
+def F2(t):
+	return hyper([1/5.0 , 2/5.0 , 3/5.0 , 4/5.0], [1/2.0 , 3/4.0 , 5/4.0], 3125*(t**4)/256)
 
-# get the nome from k
-def gnome(rho):
-	return qfrom(k=ellmodk(rho))
+def F3(t):
+	return hyper([9/20.0 , 13/20.0 , 17/20.0 , 21/20.0], [3/4.0 , 5/4.0 , 3/2.0], 3125*(t**4)/256)
 
-def signum(x):
-	if(x<0):
-		return -1.0
-	else:
-		if(x>0):
-			return 1.0
-		else:
-			return 0.0
-def s(rho):
-	if(re(rho)==0):
-		return -signum(im(rho))
-	else:
-		if(re(rho)!=0):
-			return signum(re(rho))
+def F4(t):
+	return hyper([7/10.0 , 9/10.0 , 11/10.0, 13/10.0], [5/4.0 , 3/2.0 , 7/4.0], 3125*(t**4)/256)
 
 
-def b(rho):
-	k=ellmodk(rho)
-	return s(rho)*((k**2)**(1/8.0))/(2.0*(5**(3.0/4.0))*sqrt(k*(1-k*k)))
+def x1(t):
+	return t*F2(t)
 
-def m(q):
-	return (jtheta(2,0,q)/jtheta(3,0,q))**4.0
+def x2(t):
+	return -(-F1(t) + (t/4)*F2(t) + (5*t*t/32)*F3(t) + (5*t*t*t/32) * F4(t))
 
-# the utility moo, makes doing all the tedious work much easier
-def moo(a,b,rho):
-	q = gnome(rho)
-	return m(exp(a*pi*j)*(q**b))**(1/8.0)
 
-# utility exponentials
-em34 = exp(-3.0*pi*j/4)
-em45 = exp(-4.0*pi*j/5)
-em25 = exp(-2.0*pi*j/5)
-e25 = exp(2.0*pi*j/5)
-e45 = exp(4.0*pi*j/5)
-e34 = exp(3.0*pi*j/4)
+def x3(t):
+	return -(F1(t) + (t/4)*F2(t) - (5*t*t/32)*F3(t) + (5*t*t*t/32) * F4(t))
+
+
+def x4(t):
+	return -(-j*F1(t) + (t/4)*F2(t) -(5*t*t/32)*j*F3(t) - (5*t*t*t/32) * F4(t))
+
+def x5(t):
+	return -(j*F1(t) + (t/4)*F2(t) +(5*t*t/32)*j*F3(t) - (5*t*t*t/32) * F4(t))
+
+#T =  sqrt((16/(25*sqrt(5)))*sqrt(8/(5-sqrt(5))))
+T = -sqrt(7)*j +1
 
 mp.dps=30
-# yes
-def x1(rho):
-	return e34*b(rho) * (moo(-2.0/5.0,1/5.0,rho) + j*moo(2.0/5.0,1.0/5.0,rho)) * (moo(-4.0/5.0,1/5.0,rho) + moo(4.0/5.0,1.0/5.0,rho)) * (moo(2.0,1/5.0,rho) + moo(2.0,5.0,rho))
 
-
-def x2(rho):
-	return b(rho) * (-moo(2.0,1/5.0,rho) + e34*moo(2.0/5.0,1.0/5.0,rho)) * (em34*moo(-2.0/5.0,1/5.0,rho) + j*moo(4.0/5.0,1.0/5.0,rho)) * (j*moo(-4.0/5.0,1/5.0,rho) + moo(2.0,5.0,rho))
-
-# yes, modulo minus sign
-def x3(rho):
-	return b(rho) * (em34*moo(-2.0/5.0,1/5.0,rho) - j*moo(-4.0/5.0,1.0/5.0,rho)) * (-moo(2.0,1/5.0,rho) - j*moo(4.0/5.0,1.0/5.0,rho)) * (e34*moo(2.0/5.0,1/5.0,rho) + moo(2.0,5.0,rho))
-
-# yes!
-def x4(rho):
-	return b(rho) * (moo(2.0,1/5.0,rho) - j*moo(-4.0/5.0,1.0/5.0,rho)) * (-e34*moo(2.0/5.0,1/5.0,rho) - j*moo(4.0/5.0,1.0/5.0,rho)) * (em34*moo(-2.0/5.0,1/5.0,rho) + moo(2.0,5.0,rho))
-
-
-#yes
-def x5(rho):
-	return b(rho) * (moo(2.0,1/5.0,rho) -em34*moo(-2.0/5.0,1.0/5.0,rho)) * (-e34*moo(2.0/5.0,1/5.0,rho) + j*moo(-4.0/5.0,1.0/5.0,rho)) * (-j*moo(4.0/5.0,1/5.0,rho) + moo(2.0,5.0,rho))
-
-#arr = 4.0/(5.0**(5.0/4.0))
-arr = -sqrt(7)*j +1
-
-print x1(arr)
-print x2(arr)
-print x3(arr)
-print x4(arr)
-print x5(arr)
+print limit(lambda u: x1(u), T)
+print limit(lambda u: x2(u), T)
+print limit(lambda u: x3(u), T)
+print limit(lambda u: x4(u), T)
+print limit(lambda u: x5(u), T)
