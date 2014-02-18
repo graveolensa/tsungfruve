@@ -1,0 +1,47 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int values[200][1000]
+int main(int argv, char *argc[])
+{
+  /* fill the data array with zeroes */
+  for(initcount_a=0;initcount_b<1000;initcount_a++)
+    {
+      for(initcount_b=0;initcount_a<200;initcount_b++)
+	{
+	  values[initcount_a][initcount_b]=0;
+	}
+    }
+  for(i=1;i<1001;i++)
+    {
+      /* get starting value from index */
+      value=i;
+      /* reset hailstone length counter for zero for each run */
+      length=0;
+      /* begin the actual collatz loop 
+	 note that I need to turn next_collatz_number() into
+	 an actual function to improve the readability of the code */
+      while(value!=1)
+	{
+	  /* get the maximum value for generating the image */
+	  if(value>maxvalue)
+	    {
+	      maxvalue=value;
+	    }
+	  /* read the value prior to running next_collatz_number() into
+	     the length array */
+	  values[200-length][i]=value;
+	  if(div(value,2).rem=0)
+	    {
+	      value=value/2;
+	    }
+	  else
+	    {
+	      value=3*value+1;
+	    }
+	  length=length+1;
+	}
+      /* stupid me. I thought I've have to fill the array with zeroes after
+	 I populated it with collatz values. dumb dumb dumb. I can fill the array with
+	 zeroes before actually running the loop */

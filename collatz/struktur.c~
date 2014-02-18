@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int length[1000];
+int next_collatz_number(int alpha)
+{
+  if(div(alpha,2).rem==0)
+    {
+      alpha = alpha / 2;
+    }
+  else
+    {
+      alpha = 3*alpha+1;
+    }
+  return alpha;
+}
+
+
+int main(int argv, *char argc[])
+{
+  int zerocount;
+  for(zerocount=1;zerocount<1001;zerocount++)
+    {
+      length[zerocount-1]=0;
+    }
+  int length_finder_count,val_lfc;
+  for(length_finder_count=1;length_finder_count<1001;length_finder_count++)
+    {
+      /* initialize starting value of the hailstone numbers */
+      val_lfc=length_finder_count;
+      while(val_lfc!=1)
+	{
+	  /* move to next hailstone number */
+	  val_lfc=next_collatz_number(val_lfc);
+	  /* add one to length */
+	  length[length_finder_count]+1;
+	}
+    }

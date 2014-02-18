@@ -1,0 +1,94 @@
+%% this is the amsart schema style file
+%% written by Owen Maresh
+%% Arctangent Transpetroglyphics Algra Laboratory
+\ProvidesPackage{atal}
+\usepackage[lite]{amsrefs}
+\usepackage{graphicx}
+\usepackage{xypic}
+\xyoption{pdf}
+\RequirePackage{color}
+\definecolor{darkgreen}{rgb}{0.1,0.5,0.1}
+\usepackage{amssymb}
+\usepackage[all,cmtip]{xy}
+\let\objectstyle=\displaystyle
+\newcommand{\tensor}{\otimes}
+\newcommand{\homotopic}{\simeq}
+\newcommand{\homeq}{\cong}
+\newcommand{\iso}{\approx}
+%\DeclareMathOperator{\ho}{Ho}
+%\DeclareMathOperator*{\colim}{colim}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\itilde}{\tilde{\imath}}
+\newcommand{\jtilde}{\tilde{\jmath}}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+%\numberwithin{equation}{section}
+%\theoremstyle{plain} %% This is the default, anyway
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Proposition}
+%\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{vari}[equation]{Variation}
+\newtheorem{eig}[equation]{Eigenavatar}
+\newtheorem{fo}[equation]{First Occurrence}
+%\theoremstyle{remark}
+\newtheorem{rem}[equation]{Remark}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{notation}[equation]{Notation}
+\newtheorem{terminology}[equation]{Terminology}
+\usepackage{typographique}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+%\newcommand{\newsum}{\mathop{\vcenter{\hbox{\fontsize{20}{24}\selectfont$\Sigma$}}}}
+%\newcommand{\newprod}{\mathop{\vcenter{\hbox{\fontsize{20}{24}\selectfont$\Pi$}}}}
+
+\newcommand{\dsum}{\mathop{\vcenter{\hbox{\fontsize{20}{24}\selectfont$\SSigma$}}}}
+\newcommand{\dprod}{\mathop{\vcenter{\hbox{\fontsize{20}{24}\selectfont$\PPi$}}}}
+
+\newcommand{\hyperclock}{\mathop{\vcenter{\hbox{\fontsize{20}{24}\selectfont$\clock$}}}}
+
+\newcommand{\newsum}{\mathop{\vcenter{\hbox{\huge$\Sigma$}}}}
+\newcommand{\newprod}{\mathop{\vcenter{\hbox{\huge$\Pi$}}}}
+
+%\newcommand{\dsum}{\mathop{\vcenter{\hbox{\huge$\SSigma$}}}}
+%\newcommand{\dprod}{\mathop{\vcenter{\hbox{\huge$\PPi$}}}}
+\usepackage{letltxmacro}
+%\makeatletter
+%\let\oldr@@t\r@@t
+%\def\r@@t#1#2{%
+%\setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+%\advance\dimen0-0.2\ht0
+%\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+%{\box0\lower0.4pt\box2}}
+%\LetLtxMacro{\oldsqrt}{\sqrt}
+%\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2}}
+%\makeatother
+\LetLtxMacro{\oldsqrt}{\sqrt} % makes all sqrts closed
+\renewcommand{\sqrt}[1][]{%
+  \def\DHLindex{#1}\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+  \setbox0=\hbox{$#1\oldsqrt[\DHLindex]{#2\,}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+  {\box0\lower0.71pt\box2}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+
+\usepackage[pdftex, pdfusetitle,colorlinks=true,pdfborder={0 0 0}]{hyperref}
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=darkgreen,%
+    urlcolor=darkgreen
+}
+\def\labelitemi{\lhand}

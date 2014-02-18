@@ -1,0 +1,60 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+
+int im[1000][200];
+int main(int argv, char *argc[])
+{
+  int number;
+  number=1000;
+  int count;
+  int maxvalue,maxlength;
+  int value,length;
+  int newcount;
+  int lengthdiff;
+  int j;
+  for(count=1;count<1000;count++)
+    {
+      value=count;    
+      /* gather some data*/
+      while(value!=1)
+        {
+          length=length+1;
+	  if(value>maxvalue)
+	    {
+	      maxvalue=value;
+	    }
+          if(div(value,2).rem==0)
+            {
+              value=value/2;
+            }
+          else
+            {
+              value=3*value+1;
+            }
+        }
+    }
+  /*use gathered data */
+  printf("P2 200 1000\n %d\n", maxvalue);
+  for(newcount=1;newcount<1000;newcount++)
+    {
+      value=newcount;    
+      /* gather some data*/
+      newlength=newlength-1;
+      while(value!=1)
+        {
+          length=length-1;
+	  printf("%d\n",value);
+          if(div(value,2).rem==0)
+            {
+              value=value/2;
+            }
+          else
+            {
+              value=3*value+1;
+            }
+        }
+      lengthdiff=200-newlength;
+      for(j=0;j<lengthdiff;j++){printf("0\n");}
+    }
