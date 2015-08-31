@@ -1,0 +1,124 @@
+%%% Arctangent Transpetroglyphics Algra Laboratory
+%%% LaTeX AMSArt Template FIle 
+
+%%% Xylome Template File
+
+%%%(Today is Boomtime, the 54th day of Discord in the YOLD 3181)
+%%% Version 7: Kahōʻāliʻi (Today is Sweetmorn, the 37th day of Bureaucracy in the YOLD 3180)
+%%% Version 8: (Today is Boomtime, the 54th day of Discord in the YOLD 3181)
+% The machinery of this first section I want to fold into one or two lines of 
+% \LaTeX code. 
+
+%% much of the following needs to be folded in elsewhere
+
+
+%--------------------------------------------------------------------------------------------
+\documentclass[reqno,8pt]{atalart}
+\usepackage{atal}
+\newcommand{\auref}[3][cyan]{\href{#2}{\color{#1}{#3}}}
+\newcommand{\Author}{\href{http://owen.maresh.info}{Owen Maresh}}
+\newcommand{\Title}{Next Generation Typographic Style Guidelines}
+\newcommand{\Keywords}{}
+\begin{document}
+\title{\Title}
+\author{\Author}
+%%% Dedication Line
+\dedicatory{\begin{CJK}{UTF8}{mj}古池や蛙飛び込む水の音\end{CJK}\\ old pond; a frog leaps in;water’s sound \\-- Bash\={o}}
+
+%%% Abstract
+\begin{abstract}
+\end{abstract}
+\thispagestyle{empty}
+\maketitle
+%--------------------------------------------------------------------------------------------
+
+
+\section{First Section}
+\subsection{First Subsection}
+
+
+typographic conventions
+
+for hypergeometric functions:
+        aFb's, I want to use Hoefler-Fetish338
+        for aWb's (as defined in Gasper),
+                Hoefler-Fetish338
+
+${}_a\scrum{\large F}_{b}$
+
+Instead of 
+
+\[
+G_{p,q}^{\,m,n} \!\left( \left. \begin{matrix} a_1, \dots, a_p \\ b_1, \dots, b_q \end{matrix} \; \right| \, z \right) = \frac{1}{2 \pi i} \int_L \frac{\prod_{j=1}^m \Gamma(b_j - s) \prod_{j=1}^n \Gamma(1 - a_j +s)} {\prod_{j=m+1}^q \Gamma(1 - b_j + s) \prod_{j=n+1}^p \Gamma(a_j - s)} \,z^s \,ds,
+\]
+
+write
+
+\[
+\scrum{G}_{p,q}^{\,m,n} \!\left( \left. \begin{matrix} a_1, \dots, a_p \\ b_1, \dots, b_q \end{matrix} \; \right| \, z \right) = \frac{1}{2 \pi i} \int_L \frac{\prod_{j=1}^m \Gamma(b_j - s) \prod_{j=1}^n \Gamma(1 - a_j +s)} {\prod_{j=m+1}^q \Gamma(1 - b_j + s) \prod_{j=n+1}^p \Gamma(a_j - s)} \,z^s \,ds,
+\]
+
+
+\[
+_2\scrum{F}_1 (a,b;c;z) = (1-z)^{c-a-b} {}_2F_1 (c-a, c-b;c ; z)
+\]
+
+need a good root-of-unity symbol: if we call roots of unity
+        zeta and we are dealing with the zeta function
+        this is a problem
+
+
+need a good way of distinguishing the following:
+
+        Euler's phi function
+        the golden mean phi
+        a phi b summations
+        a psi b summations
+
+        ramanujan's phi and psi functions
+
+
+
+if I talk about congruence subgroups, let's not call them Gamma(n), without
+at least using a different Gamma than the one that we're using to denote
+the gamma function.
+
+
+don't say eta(tau) or eta(q): don't be so fungible about what we're
+talking about: or find some way of writing about it that keeps things
+straight.
+
+Is this a finite field on $q$-elements, or does this $q$ refer to
+all complex numbers of magnitude less than 1?
+
+Lattices should use different characters that Eisenstein series
+(so you can talk about E8, the lattice, and E8, the Eisenstein
+series at the same time and know what you're talking about)
+
+~                                                  
+
+
+Li the function, should be denoted with 李, the chinese character
+
+%%% Bibliography
+
+%%% Actually, I'm of the opinion that a nonmodular bibliography is harmful
+%%% Hunting for references is an extremely laborious affair. What is "Comp. Rez. 109(3)? anyway"? And
+%%% Why isn't the author including a hyperlink? 
+%%% And really the metric here is not "oh, I'm defending what I'm saying", but "how fast can the reader find the supporting"
+%%% argument to the contention. Having Xanadu would be nice here. Because saying In [Mc 130], Argyllio Argyre argued that the
+%%% Phlebotinum Unobtanium Cohomology group S4(1,a) is nonisogenous to the principally polarized abelian variety which is the
+%%% hypersheaf subquotient of the moduli stack and the first fundamental group of the Ven Nerstraond epigerbe. Sometimes those
+%%% numbers and letters get in the way of the argument. So, drop 'em
+
+\begin{bibdiv}
+\begin{biblist}
+
+
+
+
+
+\end{biblist}
+\end{bibdiv}
+
+\end{document}

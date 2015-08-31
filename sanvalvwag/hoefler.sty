@@ -1,0 +1,362 @@
+%%
+%% this is the file hoefler.sty
+%% it contains the Hoefler Text font
+%% as well as some math mode corrections
+%% This is file `mathptmx.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% psfonts.dtx  (with options: `mathptmx')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from mathptmx.sty.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file psfonts.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\ProvidesPackage{hoefler}%
+[2005/04/12 PSNFSS-v9.2a
+Times w/ Math, improved (SPQR, WaS)
+]
+
+%% Use the 2007 Hoefler Text build
+\def\rmdefault{ext}
+
+%% Use Gryphius
+\def\sfdefault{ezv}
+
+%% Use Apple Menlo for the fixed width face
+%% on third thought, screw it.
+
+%% Using the new zapfino for the title
+\def\ttdefault{exf}
+
+%% We're going to comment these out so we can use the zapfino for the third font
+%% position and just redefine them from the symbol alphabet.
+\newcommand{\sun}{\texttt{q}}
+\newcommand{\moon}{\texttt{r}}
+\newcommand{\rhand}{\texttt{<}}
+\newcommand{\lhand}{\texttt{>}}
+\newcommand{\ship}{\texttt{v}}
+\newcommand{\clock}{\texttt{t}}
+
+\DeclareSymbolFont{blackboard}{OT1}{exk}{m}{n}
+\DeclareSymbolFontAlphabet{\mathbb}{blackboard}
+\DeclareSymbolFont{calligraphic}{OT1}{eqo}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{calligraphic}
+
+
+
+\DeclareSymbolFont{scrum}{OT1}{eft}{m}{n}
+\DeclareSymbolFontAlphabet{\scrum}{scrum}
+
+\DeclareSymbolFont{woo}{OT1}{ehu}{m}{n}
+\DeclareSymbolFontAlphabet{\woo}{woo}
+
+
+%operator font for the enso operator
+
+\DeclareSymbolFont{oop}{OT1}{eop}{m}{n}
+\DeclareSymbolFontAlphabet{\oop}{oop}
+
+\DeclareSymbolFont{greek}       {OT1}{euz}{m}{n}
+\DeclareSymbolFont{fancy}       {OT1}{efo}{m}{n}
+
+
+\DeclareSymbolFont{operators}   {OT1}{erq}{m}{n}
+\DeclareSymbolFont{additional}  {T1}{ext}{m}{n}
+\DeclareSymbolFont{secondary}  {T1}{euz}{m}{n}
+\DeclareSymbolFont{letters}     {OT1}{erq}{m}{it}
+%\DeclareSymbolFont{greek}       {OML}{ztmcm}{m}{n}
+%\DeclareSymbolFont{Greek}{OT1}{ztmcm}{m}{n}
+%\DeclareSymbolFont{extra}       {OML}{ztmcm}{m}{it}
+%%\DeclareSymbolFont{symbols}     {OMS}{ztmcm}{m}{n}
+%%\DeclareSymbolFont{largesymbols}{OMX}{ztmcm}{m}{n}
+%%\DeclareSymbolFont{bold}        {OT1}{ext}{bx}{n}
+%%\DeclareSymbolFont{italic}      {OT1}{ext}{m}{it}
+
+%%\DeclareSymbolFont{operators}   {OT1}{ztmcm}{m}{n}
+%%\DeclareSymbolFont{letters}     {OML}{ztmcm}{m}{it}
+%%\DeclareSymbolFont{symbols}     {OMS}{cmr}{m}{n}
+%%\DeclareSymbolFont{largesymbols}{OMX}{cmr}{m}{n}
+%%\DeclareSymbolFont{bold}        {OT1}{ext}{bx}{n}
+%%DeclareSymbolFont{italic}      {OT1}{ext}{m}{it}
+
+
+
+
+
+
+
+
+\@ifundefined{mathbf}{}{\DeclareMathAlphabet{\mathbf}{OT1}{ext}{bx}{n}}
+\@ifundefined{mathit}{}{\DeclareMathAlphabet{\mathit}{OT1}{ext}{m}{it}}
+\DeclareMathSymbol{\omicron}{0}{operators}{`\o}
+\renewcommand{\jmath}{%
+  \PackageError
+ {mathptmx}
+  {The symbols \protect\jmath, \protect\amalg\space and
+  \protect\coprod\MessageBreak
+  are not available with this package}
+  {Type \space <return> \space to proceed;
+  your command will be ignored.}}
+\let\amalg=\jmath
+\let\coprod=\jmath
+\thinmuskip=2mu
+\medmuskip=2.5mu plus 1mu minus 1mu
+\thickmuskip=4mu plus 1.5mu minus 1mu
+\DeclareRobustCommand\hbar{{%
+ \dimen@.03em%
+ \dimen@ii.06em%
+ \def\@tempa##1##2{{%
+   \lower##1\dimen@\rlap{\kern##1\dimen@ii\the##2 0\char22}}}%
+ \mathchoice\@tempa\@ne\textfont
+            \@tempa\@ne\textfont
+            \@tempa\defaultscriptratio\scriptfont
+            \@tempa\defaultscriptscriptratio\scriptscriptfont
+  h}}
+\def\boldmath{%
+   \PackageWarning%
+   {mathptmx}%
+   {There are no bold math fonts}%
+   \global\let\boldmath=\relax
+}
+\def\defaultscriptratio{.74}
+\def\defaultscriptscriptratio{.6}
+\DeclareMathSizes{5}{5}{5}{5}
+\DeclareMathSizes{6}{6}{5}{5}
+\DeclareMathSizes{7}{7}{5}{5}
+\DeclareMathSizes{8}{8}{6}{5}
+\DeclareMathSizes{9}{9}{7}{5}
+\DeclareMathSizes{10}{10}{7.4}{6}
+\DeclareMathSizes{10.95}{10.95}{8}{6}
+\DeclareMathSizes{12}{12}{9}{7}
+\DeclareMathSizes{14.4}{14.4}{10.95}{8}
+\DeclareMathSizes{17.28}{17.28}{12}{10}
+\DeclareMathSizes{20.74}{20.74}{14.4}{12}
+\DeclareMathSizes{24.88}{24.88}{17.28}{14.4}
+
+%% greek capitals
+
+\DeclareMathSymbol{\Alpha}{\mathalpha}{greek}{'101}
+\DeclareMathSymbol{\Beta}{\mathalpha}{greek}{'102}
+\DeclareMathSymbol{\Chi}{\mathalpha}{greek}{'103}
+\DeclareMathSymbol{\Delta}{\mathalpha}{greek}{'104}
+\DeclareMathSymbol{\Epsilon}{\mathalpha}{greek}{'105}
+\DeclareMathSymbol{\Phi}{\mathalpha}{greek}{'106}
+\DeclareMathSymbol{\Gamma}{\mathalpha}{greek}{'107}
+
+\DeclareMathSymbol{\Eta}{\mathalpha}{greek}{'110}
+\DeclareMathSymbol{\Iota}{\mathalpha}{greek}{'111}
+\DeclareMathSymbol{\Psi}{\mathalpha}{greek}{'112}
+\DeclareMathSymbol{\Kappa}{\mathalpha}{greek}{'113}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{greek}{'114}
+\DeclareMathSymbol{\Mu}{\mathalpha}{greek}{'115}
+\DeclareMathSymbol{\Nu}{\mathalpha}{greek}{'116}
+\DeclareMathSymbol{\Omicron}{\mathalpha}{greek}{'117}
+\DeclareMathSymbol{\sierp}{\mathalpha}{greek}{'051}
+\DeclareMathSymbol{\Sierp}{\mathalpha}{greek}{'053}
+\DeclareMathSymbol{\SSigma}{\mathalpha}{greek}{'052}
+\DeclareMathSymbol{\PPi}{\mathalpha}{greek}{'054}
+
+\DeclareMathSymbol{\PrSu}{\mathalpha}{greek}{'055}
+\DeclareMathSymbol{\SSSigma}{\mathalpha}{greek}{'056}
+\DeclareMathSymbol{\PPPi}{\mathalpha}{greek}{'057}
+\DeclareMathSymbol{\bi}{\mathalpha}{greek}{'050}
+\DeclareMathSymbol{\mayanb}{\mathalpha}{greek}{'051}
+
+\DeclareMathSymbol{\Pi}{\mathalpha}{greek}{'120}
+\DeclareMathSymbol{\Theta}{\mathalpha}{greek}{'121}
+\DeclareMathSymbol{\Rho}{\mathalpha}{greek}{'122}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{greek}{'123}
+\DeclareMathSymbol{\Tau}{\mathalpha}{greek}{'124}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{greek}{'125}
+\DeclareMathSymbol{\Omega}{\mathalpha}{greek}{'127}
+
+\DeclareMathSymbol{\Xi}{\mathalpha}{greek}{'130}
+\DeclareMathSymbol{\Zeta}{\mathalpha}{greek}{'132}
+
+%% greek lowercase
+
+\DeclareMathSymbol{\alpha}{\mathalpha}{greek}{'141}
+\DeclareMathSymbol{\beta}{\mathalpha}{greek}{'142}
+\DeclareMathSymbol{\chi}{\mathalpha}{greek}{'143}
+\DeclareMathSymbol{\delta}{\mathalpha}{greek}{'144}
+\DeclareMathSymbol{\epsilon}{\mathalpha}{greek}{'145}
+\DeclareMathSymbol{\phi}{\mathalpha}{greek}{'146}
+\DeclareMathSymbol{\gamma}{\mathalpha}{greek}{'147}
+
+\DeclareMathSymbol{\eta}{\mathalpha}{greek}{'150}
+\DeclareMathSymbol{\iota}{\mathalpha}{greek}{'151}
+\DeclareMathSymbol{\psi}{\mathalpha}{greek}{'152}
+\DeclareMathSymbol{\kappa}{\mathalpha}{greek}{'153}
+\DeclareMathSymbol{\lambda}{\mathalpha}{greek}{'154}
+\DeclareMathSymbol{\mu}{\mathalpha}{greek}{'155}
+\DeclareMathSymbol{\nu}{\mathalpha}{greek}{'156}
+\DeclareMathSymbol{\omicron}{\mathalpha}{greek}{'157}
+
+\DeclareMathSymbol{\pi}{\mathalpha}{greek}{'160}
+\DeclareMathSymbol{\theta}{\mathalpha}{greek}{'161}
+\DeclareMathSymbol{\rho}{\mathalpha}{greek}{'162}
+\DeclareMathSymbol{\sigma}{\mathalpha}{greek}{'163}
+\DeclareMathSymbol{\tau}{\mathalpha}{greek}{'164}
+\DeclareMathSymbol{\upsilon}{\mathalpha}{greek}{'165}
+\DeclareMathSymbol{\omega}{\mathalpha}{greek}{'167}
+
+\DeclareMathSymbol{\xi}{\mathalpha}{greek}{'170}
+\DeclareMathSymbol{\zeta}{\mathalpha}{greek}{'172}
+
+%% Accent
+\DeclareMathAccent{\bar}{\mathalpha}{letters}{"AF}
+
+%% capital numerals
+\DeclareMathSymbol{\capa}{\mathalpha}{secondary}{'060}
+\DeclareMathSymbol{\capb}{\mathalpha}{secondary}{'061}
+\DeclareMathSymbol{\capc}{\mathalpha}{secondary}{'062}
+\DeclareMathSymbol{\capd}{\mathalpha}{secondary}{'063}
+\DeclareMathSymbol{\cape}{\mathalpha}{secondary}{'064}
+\DeclareMathSymbol{\capf}{\mathalpha}{secondary}{'065}
+\DeclareMathSymbol{\capg}{\mathalpha}{secondary}{'066}
+\DeclareMathSymbol{\caph}{\mathalpha}{secondary}{'067}
+\DeclareMathSymbol{\capi}{\mathalpha}{secondary}{'071}
+\DeclareMathSymbol{\capj}{\mathalpha}{secondary}{'071}
+
+
+\DeclareMathSymbol{\permanence}{\mathalpha}{fancy}{'101}
+\DeclareMathSymbol{\eh}{\mathalpha}{fancy}{'114}
+
+\DeclareMathSymbol{\alef}{\mathalpha}{fancy}{'141}
+\DeclareMathSymbol{\bet}{\mathalpha}{fancy}{'142}
+\DeclareMathSymbol{\mem}{\mathalpha}{fancy}{'143}
+\DeclareMathSymbol{\lamedh}{\mathalpha}{fancy}{'154}
+\DeclareMathSymbol{\ma}{\mathalpha}{fancy}{'102}
+\DeclareMathSymbol{\ya}{\mathalpha}{fancy}{'113}
+\DeclareMathSymbol{\crazy}{\mathalpha}{fancy}{'147}
+
+% additional fraction decs
+\DeclareMathSymbol{\oh}{\mathalpha}{fancy}{'115}
+\DeclareMathSymbol{\ot}{\mathalpha}{fancy}{'116}
+\DeclareMathSymbol{\wt}{\mathalpha}{fancy}{'117}
+\DeclareMathSymbol{\onefourth}{\mathalpha}{fancy}{'120}
+\DeclareMathSymbol{\threefourths}{\mathalpha}{fancy}{'121}
+
+\DeclareMathSymbol{\oneeighth}{\mathalpha}{fancy}{'122}
+\DeclareMathSymbol{\threeighths}{\mathalpha}{fancy}{'123}
+\DeclareMathSymbol{\fiveeighths}{\mathalpha}{fancy}{'124}
+\DeclareMathSymbol{\seveneighths}{\mathalpha}{fancy}{'125}
+
+\DeclareMathSymbol{\nq}{\mathalpha}{secondary}{'075}
+
+
+\DeclareMathSymbol{.}{\mathalpha}{additional}{"2E}
+\DeclareMathSymbol{,}{\mathalpha}{additional}{"2C}
+\DeclareMathSymbol{/}{\mathalpha}{additional}{"2F}
+%% \DeclareMathSymbol{-}{\mathalpha}{letters}{"2D}
+\DeclareMathSymbol{\wp}{\mathalpha}{secondary}{'173}
+\DeclareMathSymbol{\forall}{\mathalpha}{secondary}{'175}
+\DeclareMathSymbol{\exists}{\mathalpha}{secondary}{'174}
+\DeclareMathSymbol{\leq}{\mathalpha}{secondary}{'074}
+\DeclareMathSymbol{\geq}{\mathalpha}{secondary}{'076}
+\DeclareMathSymbol{\nopeeq}{\mathalpha}{secondary}{'075}
+\DeclareMathSymbol{\isom}{\mathalpha}{secondary}{'041}
+\DeclareMathSymbol{\tial}{\mathalpha}{secondary}{'100}
+\DeclareMathSymbol{\zort}{\mathalpha}{secondary}{'133}
+\DeclareMathSymbol{\vm}{\mathalpha}{secondary}{'053}
+\DeclareMathSymbol{\nurt}{\mathalpha}{secondary}{'242}
+\renewcommand{\subseteq}{\zort}
+\renewcommand{\neq}{\nopeeq}
+\renewcommand{\partial}{\tial}
+\renewcommand{\pm}{\vm}
+\DeclareMathSymbol{\not}{\mathalpha}{secondary}{'077}
+
+%% Some other interesting declarations
+\DeclareMathSymbol{\Wrev}{\mathalpha}{secondary}{'043}
+\DeclareMathSymbol{\wrev}{\mathalpha}{secondary}{'044}
+
+\DeclareMathSymbol{\grvGamma}{\mathalpha}{greek}{'126}
+\DeclareMathSymbol{\grvLambda}{\mathalpha}{greek}{'131}
+\DeclareMathSymbol{\mgamma}{\mathalpha}{greek}{'166}
+\DeclareMathSymbol{\mlambda}{\mathalpha}{greek}{'171}
+
+%% large sum like operators
+
+
+
+
+
+%% for some reason, these aren't working
+\renewcommand{\>}{\DeclareMathSymbol{\>}{\mathalpha}{letters}{"3E}}
+
+\renewcommand{\dots}{\mathrm{...}}
+\renewcommand{\ldots}{\mathrm{...}}
+\renewcommand{\cong}{\,\isom\,}
+
+\DeclareMathSymbol{<}{\mathalpha}{additional}{'074}
+\DeclareMathSymbol{>}{\mathalpha}{additional}{'076}
+\DeclareMathSymbol{|}{\mathalpha}{additional}{'174}
+
+
+%%\DeclareMathSymbol{-}{\mathalpha}{operators}{'045}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ProcessOptions\relax
+\let\s@vedhbar\hbar
+\AtBeginDocument{%
+  \DeclareFontFamily{U}{msa}{}%
+  \DeclareFontShape{U}{msa}{m}{n}{<->msam10}{}%
+  \DeclareFontFamily{U}{msb}{}%
+  \DeclareFontShape{U}{msb}{m}{n}{<->msbm10}{}%
+  \DeclareFontFamily{U}{euf}{}%
+  \DeclareFontShape{U}{euf}{m}{n}{<-6>eufm5<6-8>eufm7<8->eufm10}{}%
+  \DeclareFontShape{U}{euf}{b}{n}{<-6>eufb5<6-8>eufb7<8->eufb10}{}%
+  \@ifpackageloaded{amsfonts}{\let\hbar\s@vedhbar}{}
+  \@ifpackageloaded{amsmath}{}{%
+    \newdimen\big@size
+    \addto@hook\every@math@size{\setbox\z@\vbox{\hbox{$($}\kern\z@}%
+       \global\big@size 1.2\ht\z@}
+    \def\bBigg@#1#2{%
+       {\hbox{$\left#2\vcenter to#1\big@size{}\right.\n@space$}}}
+    \def\big{\bBigg@\@ne}
+    \def\Big{\bBigg@{1.5}}
+    \def\bigg{\bBigg@\tw@}
+    \def\Bigg{\bBigg@{2.5}}
+  }
+}
+\endinput
+%%
+%% End of file `mathptmx.sty'.
