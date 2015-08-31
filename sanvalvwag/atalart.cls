@@ -5,7 +5,7 @@
 \global\expandafter\let\csname ver@amsthm.sty\expandafter\endcsname
   \csname ver@\@currname.\@currext\endcsname
 %% This line is so I can call things from this style file here
-\usepackage{hoefler}
+\usepackage{hlr}
 \let\@xp=\expandafter
 \let\@nx=\noexpand
 \def\@oparg#1[#2]{\@ifnextchar[{#1}{#1[#2]}}
