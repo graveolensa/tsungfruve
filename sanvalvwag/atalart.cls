@@ -1,31 +1,4 @@
-%%
-%% This is file `amsart.cls',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% amsclass.dtx  (with options: `amsart,classes')
-%% 
-%% This is a generated file.
-%% 
-%% Copyright 1995, 199, 2004, 2009 American Mathematical Society.
-%% 
-%% American Mathematical Society
-%% Technical Support
-%% Publications Technical Group
-%% 201 Charles Street
-%% Providence, RI 02904
-%% USA
-%% tel: (401) 455-4080
-%%      (800) 321-4267 (USA and Canada only)
-%% fax: (401) 331-3842
-%% email: tech-support@ams.org
-%% 
-%% Unlimited copying and redistribution of this file are permitted as
-%% long as this file is not modified.  Modifications, and distribution
-%% of modified versions, are permitted, but only if the resulting file
-%% is renamed.
-%% 
+%% modifed amsart, so different name, as they indicate
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 [1995/06/01]% LaTeX date must be June 1995 or later
 \ProvidesClass{atalart}[2015/05/08 arctangent transpetroglyphics article class]
